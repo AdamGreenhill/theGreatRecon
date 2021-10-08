@@ -16,7 +16,7 @@ curl https://sh.rustup.rs -sSf | sh
 
 #####installing tools && dependencies
 
-apt install -y host dig python2 python3 python3-pip git curl jq ruby perl packer rsync fzf wget cargo;
+apt install -y dnsutils python2 python3 python3-pip git curl jq ruby perl packer rsync fzf wget cargo;
 apt-get install -y libcurl4-openssl-dev
 apt-get install -y libssl-dev
 apt-get install -y jq
