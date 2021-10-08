@@ -6,17 +6,9 @@ sleep 2;
 mkdir -p /opt/tools;
 cd /opt/tools;
 
-#####installing rust
-
-#if wsl
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;
-
-#if linux
-curl https://sh.rustup.rs -sSf | sh
-
 #####installing tools && dependencies
 
-apt install -y dnsutils python2 python3 python3-pip git curl jq ruby perl packer rsync fzf wget cargo curl;
+apt install -y dnsutils python2 python3 python3-pip git jq ruby perl packer rsync fzf wget cargo curl;
 apt-get install -y libcurl4-openssl-dev
 apt-get install -y libssl-dev
 apt-get install -y jq
@@ -31,6 +23,9 @@ apt-get install -y rename
 apt-get install -y xargs
 apt-get install -y snapd
 
+#####installing rust
+
+curl https://sh.rustup.rs -sSf | sh
 
 #####instaling go, configuring it into path and making ~/go/ the GOPATH
 
