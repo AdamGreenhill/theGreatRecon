@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "setting up your linux for some recon :)"
 sleep 2;
-sudo apt update;
+
 # mkdir tools on user's dir
 mkdir ~/tools;
 cd ~/tools;
@@ -16,60 +16,42 @@ curl https://sh.rustup.rs -sSf | sh
 
 #####installing tools && dependencies
 
-sudo apt install -y python2 python3 python3-pip git curl jq ruby perl packer rsync fzf wget cargo;
-sudo apt-get install -y libcurl4-openssl-dev
-sudo apt-get install -y libssl-dev
-sudo apt-get install -y jq
-sudo apt-get install -y ruby-full
-sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-get install -y python-setuptools
-sudo apt-get install -y libldns-dev
-sudo apt-get install -y python-dnspython
-sudo apt-get install -y git gitk
-sudo apt-get install -y rename
-sudo apt-get install -y xargs
-sudo apt-get install -y snapd
+apt install -y python2 python3 python3-pip git curl jq ruby perl packer rsync fzf wget cargo;
+apt-get install -y libcurl4-openssl-dev
+apt-get install -y libssl-dev
+apt-get install -y jq
+apt-get install -y ruby-full
+apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+apt-get install -y build-essential libssl-dev libffi-dev python-dev
+apt-get install -y python-setuptools
+apt-get install -y libldns-dev
+apt-get install -y python-dnspython
+apt-get install -y git gitk
+apt-get install -y rename
+apt-get install -y xargs
+apt-get install -y snapd
 
 
 #####instaling go, configuring it into path and making ~/go/ the GOPATH
 
 cd tools;
 
-if [[ -z "$GOPATH" ]];then
-echo "It looks like go is not installed, would you like to install it now"
-PS3="Please select an option : "
-choices=("yes" "no")
-select choice in "${choices[@]}"; do
-        case $choice in
-                yes)
-
-					echo "Installing Golang"
-					wget https://golang.org/dl/go1.15.7.linux-amd64.tar.gz
-					sudo tar -xvf go1.15.7.linux-amd64.tar.gz
-					sudo mv go /usr/local
-					export GOROOT=/usr/local/go
-					export GOPATH=$HOME/go
-					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-					echo 'export GOROOT=/usr/local/go' >> ~/.profile
-					echo 'export GOPATH=$HOME/go'	>> ~/.profile			
-					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile	
-					source ~/.profile
-					sleep 1
-					break
-					;;
-				no)
-					echo "Please install go and rerun this script"
-					echo "Aborting installation..."
-					exit 1
-					;;
-	esac	
-done
-fi
+echo "Installing Golang"
+wget https://golang.org/dl/go1.15.7.linux-amd64.tar.gz
+tar -xvf go1.15.7.linux-amd64.tar.gz
+mv go /usr/local
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+echo 'export GOROOT=/usr/local/go' >> ~/.profile
+echo 'export GOPATH=$HOME/go'	>> ~/.profile			
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile	
+source ~/.profile
+sleep 1
 
 #####installing phyton2-pip
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output /tmp/get-pip.py;
-sudo python2 /tmp/get-pip.py;
+python2 /tmp/get-pip.py;
 
 #####installing go tools
 
@@ -220,7 +202,7 @@ echo "Done"
 echo "Installing findomain"
 git clone https://github.com/Edu4rdSHL/findomain.git ~/tools/findomain;
 cd findomain; cargo build --release;
-sudo cp ./target/release/findomain /usr/bin/;
+cp ./target/release/findomain /usr/bin/;
 findomain;
 cd ~/tools/;
 echo "Done"
@@ -279,14 +261,14 @@ echo "done"
 
 #install chromium
 echo "Installing Chromium"
-sudo snap install chromium
+snap install chromium
 echo "done"
 
 cd ~/tools/
 echo "installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
-sudo python setup.py install
+python setup.py install
 cd ~/tools/
 echo "done"
 
@@ -307,7 +289,7 @@ echo "done"
 echo "installing wpscan"
 git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan*
-sudo gem install bundler && bundle install --without test
+gem install bundler && bundle install --without test
 cd ~/tools/
 echo "done"
 
@@ -344,7 +326,7 @@ cd ~/tools/
 echo "done"
 
 echo "installing nmap"
-sudo apt-get install -y nmap
+apt-get install -y nmap
 echo "done"
 
 echo "installing massdns"
