@@ -3,8 +3,8 @@ echo "setting up your linux for some recon :)"
 sleep 2;
 
 # mkdir tools on user's dir
-mkdir -p /opts/tools;
-cd /opts/tools;
+mkdir -p /opt/tools;
+cd /opt/tools;
 
 #####installing rust
 
@@ -190,68 +190,68 @@ echo "Done"
 
 #installing other tools which needs more setup
 #github-search
-echo "Installing github search on /opts/tools/github-search"
-git clone https://github.com/gwen001/github-search.git /opts/tools/github-search;
-python2 -m pip install -r /opts/tools/github-search/requirements2.txt;
-python2 -m pip install -r /opts/tools/github-search/requirements3.txt;
-python3 -m pip install -r /opts/tools/github-search/requirements2.txt;
-python3 -m pip install -r /opts/tools/github-search/requirements3.txt;
+echo "Installing github search on /opt/tools/github-search"
+git clone https://github.com/gwen001/github-search.git /opt/tools/github-search;
+python2 -m pip install -r /opt/tools/github-search/requirements2.txt;
+python2 -m pip install -r /opt/tools/github-search/requirements3.txt;
+python3 -m pip install -r /opt/tools/github-search/requirements2.txt;
+python3 -m pip install -r /opt/tools/github-search/requirements3.txt;
 echo "Done"
 
 #findomain
 echo "Installing findomain"
-git clone https://github.com/Edu4rdSHL/findomain.git /opts/tools/findomain;
+git clone https://github.com/Edu4rdSHL/findomain.git /opt/tools/findomain;
 cd findomain; cargo build --release;
 cp ./target/release/findomain /usr/bin/;
 findomain;
-cd /opts/tools/;
+cd /opt/tools/;
 echo "Done"
 
 #Interlace
 echo "Installing Interlace"
-git clone https://github.com/codingo/Interlace.git /opts/tools/interlace;
-python3 /opts/tools/interlace/setup.py install;
+git clone https://github.com/codingo/Interlace.git /opt/tools/interlace;
+python3 /opt/tools/interlace/setup.py install;
 echo "Done"
 
 #download gitdump
 echo "Installing GitDump"
-cd /opts/tools/;
-git clone https://github.com/arthaud/git-dumper.git /opts/tools/git-dumper;
-python3 -m pip install -r /opts/tools/git-dumper/requirements.txt;
+cd /opt/tools/;
+git clone https://github.com/arthaud/git-dumper.git /opt/tools/git-dumper;
+python3 -m pip install -r /opt/tools/git-dumper/requirements.txt;
 echo "Done"
 
 #install paramspider
 echo "installing paramspider"
-cd /opts/tools;
-git clone https://github.com/devanshbatham/ParamSpider.git /opts/tools/paramspider;
-cd /opts/tools/paramspider;
+cd /opt/tools;
+git clone https://github.com/devanshbatham/ParamSpider.git /opt/tools/paramspider;
+cd /opt/tools/paramspider;
 python3 -m pip install -r requirements.txt;
 echo "done"
 
 #install secretfinder
 echo "installing secretfinder.py"
-cd /opts/tools;
-git clone https://github.com/m4ll0k/SecretFinder.git /opts/tools/SecretFinder;
-cd /opts/tools/SecretFinder;
-python2 -m pip install -r /opts/tools/SecretFinder/requirements.txt
-python3 -m pip install -r /opts/tools/SecretFinder/requirements.txt
+cd /opt/tools;
+git clone https://github.com/m4ll0k/SecretFinder.git /opt/tools/SecretFinder;
+cd /opt/tools/SecretFinder;
+python2 -m pip install -r /opt/tools/SecretFinder/requirements.txt
+python3 -m pip install -r /opt/tools/SecretFinder/requirements.txt
 echo "Done"
 
 #install JSScanner
 echo "Installing JSScanner"
-cd /opts/tools;
-git clone https://github.com/0x240x23elu/JSScanner.git /opts/tools/JSScanner;
-cd /opts/tools/JSScanner;
-python3 -m pip install -r /opts/tools/JSScanner/requirements.txt;
+cd /opt/tools;
+git clone https://github.com/0x240x23elu/JSScanner.git /opt/tools/JSScanner;
+cd /opt/tools/JSScanner;
+python3 -m pip install -r /opt/tools/JSScanner/requirements.txt;
 echo "Done"
 
 #install arjun
 echo "installing Arjun"
-cd /opts/tools;
-git clone https://github.com/s0md3v/Arjun.git /opts/tools/Arjun;
-cd /opts/tools/Arjun;
-python3 /opts/tools/Arjun/setup.py install;
-cd /opts/tools;
+cd /opt/tools;
+git clone https://github.com/s0md3v/Arjun.git /opt/tools/Arjun;
+cd /opt/tools/Arjun;
+python3 /opt/tools/Arjun/setup.py install;
+cd /opt/tools;
 echo "Done"
 
 #install ntHiM
@@ -264,25 +264,25 @@ echo "Installing Chromium"
 snap install chromium
 echo "done"
 
-cd /opts/tools/
+cd /opt/tools/
 echo "installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
 python setup.py install
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
 pip install -r requirements.txt
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 
 echo "installing teh_s3_bucketeers"
 git clone https://github.com/tomdev/teh_s3_bucketeers.git
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 
@@ -290,39 +290,39 @@ echo "installing wpscan"
 git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan*
 gem install bundler && bundle install --without test
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing dirsearch"
 git clone https://github.com/maurosoria/dirsearch.git
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 
 echo "installing lazys3"
 git clone https://github.com/nahamsec/lazys3.git
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing virtual host discovery"
 git clone https://github.com/jobertabma/virtual-host-discovery.git
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 
 echo "installing sqlmap"
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing knock.py"
 git clone https://github.com/guelfoweb/knock.git
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing lazyrecon"
 git clone https://github.com/nahamsec/lazyrecon.git
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing nmap"
@@ -331,16 +331,16 @@ echo "done"
 
 echo "installing massdns"
 git clone https://github.com/blechschmidt/massdns.git
-cd /opts/tools/massdns
+cd /opt/tools/massdns
 make
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing asnlookup"
 git clone https://github.com/yassineaboukir/asnlookup.git
-cd /opts/tools/asnlookup
+cd /opt/tools/asnlookup
 pip install -r requirements.txt
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
 echo "installing httprobe"
@@ -360,27 +360,27 @@ git clone https://github.com/nahamsec/crtndstry.git
 echo "done"
 
 echo "downloading Seclists"
-cd /opts/tools/
+cd /opt/tools/
 git clone https://github.com/danielmiessler/SecLists.git
-cd /opts/tools/SecLists/Discovery/DNS/
+cd /opt/tools/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
-cd /opts/tools/
+cd /opt/tools/
 echo "done"
 
-#Getting all tools of https://github.com/KingOfBugbounty/Bug-Bounty-Toolz into our /opts/tools dir :)
+#Getting all tools of https://github.com/KingOfBugbounty/Bug-Bounty-Toolz into our /opt/tools dir :)
 echo "Getting all tools on KingOfBugBounty/Bug-Bouty-Toolz on our dir :)"
-cd /opts/tools/
-git clone https://github.com/KingOfBugbounty/Bug-Bounty-Toolz.git /opts/tools/bbtools
-mv /opts/tools/bbtools/* /opts/tools/.
-rm -r /opts/tools/bbtools
+cd /opt/tools/
+git clone https://github.com/KingOfBugbounty/Bug-Bounty-Toolz.git /opt/tools/bbtools
+mv /opt/tools/bbtools/* /opt/tools/.
+rm -r /opt/tools/bbtools
 echo "done"
 
 echo 'source ~/.profile' >> ~/.bashrc
 echo 'source ~/.profile' >> ~/.zshrc
 
-echo -e "\n\n\n\n\n\nDone! All tools are set up in /opts/tools"
-ls /opts/tools/
+echo -e "\n\n\n\n\n\nDone! All tools are set up in /opt/tools"
+ls /opt/tools/
 ls ~/go/bin/
 echo -e "\n\n"
 echo "Don't forget to set up AWS credentials in ~/.aws/!"
