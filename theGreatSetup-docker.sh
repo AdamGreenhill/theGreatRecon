@@ -20,8 +20,9 @@ apt-get install -y libldns-dev
 apt-get install -y python-dnspython
 apt-get install -y git gitk
 apt-get install -y rename
-apt-get install -y xargs
+apt-get install -y findutils
 apt-get install -y snapd
+apt install -y zip
 
 #####installing rust
 
@@ -29,7 +30,7 @@ curl https://sh.rustup.rs -sSf | sh
 
 #####instaling go, configuring it into path and making ~/go/ the GOPATH
 
-cd tools;
+cd /opt/tools;
 
 echo "Installing Golang"
 wget https://golang.org/dl/go1.15.7.linux-amd64.tar.gz
@@ -256,7 +257,15 @@ echo "done"
 
 #install chromium
 echo "Installing Chromium"
-snap install chromium
+apt install -y chromium
+echo "done"
+
+# install Aquatone
+echo "Installing Aquatone"
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_amd64_1.7.0.zip
+mv ./aquatone_linux_amd64_1.7.0/aquatone /opt/tools/
+rm -rf aquatone_linux_amd64_1.7.*
 echo "done"
 
 cd /opt/tools/
@@ -290,6 +299,8 @@ echo "done"
 
 echo "installing dirsearch"
 git clone https://github.com/maurosoria/dirsearch.git
+cd dirsearch
+pip3 install -r requirements.txt
 cd /opt/tools/
 echo "done"
 
@@ -375,8 +386,6 @@ echo 'source ~/.profile' >> ~/.bashrc
 echo 'source ~/.profile' >> ~/.zshrc
 
 echo -e "\n\n\n\n\n\nDone! All tools are set up in /opt/tools"
-ls /opt/tools/
-ls ~/go/bin/
 echo -e "\n\n"
 echo "Don't forget to set up AWS credentials in ~/.aws/!"
 echo "Don't forget to set up GITHUB Token in your OFJAAAAH.sh script!"
